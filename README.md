@@ -5,7 +5,7 @@
 - При відвідуванні живої сторінки завдання, консоль не містить помилок і
   попереджень.
 - Проєкт зібрано за допомогою parcel-project-template.
-- Код відформатовано Prettier.
+- Код відформатовано `Prettier`.
 
 # Завдання - Котопошук
 
@@ -13,10 +13,7 @@
 породою. Подивися демо відео роботи програми, використовуй його як орієнтир для
 необхідного функціоналу.
 
-<video controls>
-  <source src="./assets/catsearch-demo.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/d89090e1-57bc-48b4-982b-7ee2a37c019b
 
 ## HTTP-запити
 
@@ -44,9 +41,9 @@ axios.defaults.headers.common["x-api-key"] = "твій ключ";
 `select.breed-select` опціями так, щоб `value` опції містило `id` породи, а в
 інтерфейсі користувачеві відображалася назва породи.
 
-:::tip Напиши функцію `fetchBreeds()`, яка виконує HTTP-запит і повертає проміс
+>Напиши функцію `fetchBreeds()`, яка виконує HTTP-запит і повертає проміс
 із масивом порід - результатом запиту. Винеси її у файл `cat-api.js` та зроби
-іменований експорт. :::
+іменований експорт.
 
 ## Інформація про кота
 
@@ -67,9 +64,9 @@ To ensure your code is clean and maintainable, always handle errors gracefully
 and provide meaningful feedback to the user. This will improve the user
 experience and make debugging easier.
 
-:::tip Напиши функцію `fetchCatByBreed(breedId)`, яка очікує ідентифікатор
+>Напиши функцію `fetchCatByBreed(breedId)`, яка очікує ідентифікатор
 породи, робить HTTP-запит і повертає проміс із даними про кота - результатом
-запиту. Винеси її у файл `cat-api.js` і зроби іменований експорт. :::
+запиту. Винеси її у файл `cat-api.js` і зроби іменований експорт.
 
 Якщо запит був успішний, під селектом у блоці `div.cat-info` з'являється
 зображення і розгорнута інформація про кота: назва породи, опис і темперамент.
