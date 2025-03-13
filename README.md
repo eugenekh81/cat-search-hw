@@ -101,6 +101,6 @@ https://api.thecatapi.com/v1/images/search?breed_ids=ідентифікатор_
 - Замість `p.loader` можеш використовувати будь-яку бібліотеку з красивими
   CSS-завантажувачами, наприклад
   [https://cssloaders.github.io/](https://cssloaders.github.io/)
-- Завантажувач p.error можеш використовувати будь-яку бібліотеку з гарними
+- Завантажувач `p.error` можеш використовувати будь-яку бібліотеку з гарними
   сповіщеннями, наприклад
   [Notiflix](https://github.com/notiflix/Notiflix#readme)
