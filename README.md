@@ -41,7 +41,7 @@ axios.defaults.headers.common["x-api-key"] = "твій ключ";
 `select.breed-select` опціями так, щоб `value` опції містило `id` породи, а в
 інтерфейсі користувачеві відображалася назва породи.
 
->Напиши функцію `fetchBreeds()`, яка виконує HTTP-запит і повертає проміс
+Напиши функцію `fetchBreeds()`, яка виконує HTTP-запит і повертає проміс
 із масивом порід - результатом запиту. Винеси її у файл `cat-api.js` та зроби
 іменований експорт.
 
@@ -60,11 +60,7 @@ axios.defaults.headers.common["x-api-key"] = "твій ключ";
 https://api.thecatapi.com/v1/images/search?breed_ids=ідентифікатор_породи
 ```
 
-To ensure your code is clean and maintainable, always handle errors gracefully
-and provide meaningful feedback to the user. This will improve the user
-experience and make debugging easier.
-
->Напиши функцію `fetchCatByBreed(breedId)`, яка очікує ідентифікатор
+Напиши функцію `fetchCatByBreed(breedId)`, яка очікує ідентифікатор
 породи, робить HTTP-запит і повертає проміс із даними про кота - результатом
 запиту. Винеси її у файл `cat-api.js` і зроби іменований експорт.
 
