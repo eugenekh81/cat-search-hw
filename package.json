@@ -2,10 +2,11 @@
   "name": "cat-search-hw",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "start": "parcel src/index.html",
+    "build": "parcel build --public-url /cat-search-hw/",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
     "buffer": "^6.0.3",
-    "parcel": "^2.6.0",
+    "parcel": "^1.12.3",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4",
     "process": "^0.11.10"
