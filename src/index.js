@@ -1,5 +1,4 @@
 'use strict';
-
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
 
 const select = document.querySelector('.breed-select');
