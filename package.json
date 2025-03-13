@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build --public-url /cat-search-hw/",
+    "build": "parcel build src/index.html --public-url /cat-search-hw/",
     "deploy": "gh-pages -d dist"
   },
   "author": "",
