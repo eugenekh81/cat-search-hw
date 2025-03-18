@@ -23,7 +23,8 @@ const toggleVisibility = (el, show) => {
 };
 
 toggleVisibility(errorMessage, false);
-toggleVisibility(loader, false);
+toggleVisibility(select, false);
+toggleVisibility(loader, true);
 
 const renderBreeds = data => {
   data.forEach(element => {
@@ -33,6 +34,9 @@ const renderBreeds = data => {
 
     select.appendChild(option);
   });
+
+  toggleVisibility(loader, false);
+  toggleVisibility(select, true);
 };
 
 fetchBreeds().then(renderBreeds);
@@ -50,6 +54,8 @@ select.addEventListener('change', e => {
   if (breedId) {
     toggleVisibility(loader, true);
     toggleVisibility(catInfo, false);
+    toggleVisibility(errorMessage, false);
+
     fetchCatByBreed(breedId)
       .then(data => {
         showCatInfo(data);
@@ -57,6 +63,7 @@ select.addEventListener('change', e => {
         toggleVisibility(catInfo, true);
       })
       .catch(() => {
+        toggleVisibility(loader, false);
         toggleVisibility(errorMessage, true);
       });
   }
