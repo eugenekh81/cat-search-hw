@@ -16,9 +16,9 @@ select.appendChild(placeholder);
 
 const toggleVisibility = (el, show) => {
   if (show) {
-    el.style.display = 'block';
+    el.classList.remove('hidden');
   } else {
-    el.style.display = 'none';
+    el.classList.add('hidden');
   }
 };
 
@@ -26,7 +26,7 @@ toggleVisibility(errorMessage, false);
 toggleVisibility(select, false);
 toggleVisibility(loader, true);
 
-const renderBreeds = data => {
+const renderBreeds = ({ data }) => {
   data.forEach(element => {
     const option = document.createElement('option');
     option.value = element.id;
@@ -69,7 +69,10 @@ select.addEventListener('change', e => {
   }
 });
 
-const showCatInfo = data => {
+const showCatInfo = axiosResponse => {
+  console.log(axiosResponse);
+
+  const { data } = axiosResponse;
   const cat = data[0];
   const breed = cat.breeds[0];
 
@@ -96,14 +99,6 @@ const showCatInfo = data => {
 // styles
 
 // body
-document.body.style.fontFamily = 'Arial, sans-serif';
-document.body.style.textAlign = 'center';
-document.body.style.margin = '0px';
-document.body.style.display = 'flex';
-document.body.style.flexDirection = 'column';
-document.body.style.alignItems = 'center';
-document.body.style.justifyContent = 'center';
-document.body.style.height = '100vh';
 
 // select
 select.style.backgroundColor = '#fff';
