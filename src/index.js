@@ -44,27 +44,26 @@ fetchBreeds().then(renderBreeds);
 select.addEventListener('change', e => {
   const breedId = e.target.value;
 
-  catInfo.style.maxWidth = '400px';
-  catInfo.style.padding = '15px';
-  catInfo.style.border = '1px solid #ddd';
-  catInfo.style.borderRadius = '8px';
-  catInfo.style.backgroundColor = '#fff';
-  catInfo.style.boxShadow = '2px 2px 10px rgba(0, 0, 0, 0.1)';
-
   if (breedId) {
     toggleVisibility(loader, true);
     toggleVisibility(catInfo, false);
     toggleVisibility(errorMessage, false);
+
+    catInfo.style.display = 'none';
 
     fetchCatByBreed(breedId)
       .then(data => {
         showCatInfo(data);
         toggleVisibility(loader, false);
         toggleVisibility(catInfo, true);
+
+        catInfo.style.display = 'block';
       })
       .catch(() => {
         toggleVisibility(loader, false);
         toggleVisibility(errorMessage, true);
+
+        catInfo.style.display = 'none';
       });
   }
 });
@@ -95,24 +94,3 @@ const showCatInfo = axiosResponse => {
 
   catInfo.append(catsBreed, catImage, breedDescription, temperament);
 };
-
-// styles
-
-// body
-
-// select
-select.style.backgroundColor = '#fff';
-select.style.border = '2px solid #000';
-select.style.padding = '8px';
-select.style.borderRadius = '8px';
-select.style.fontSize = '16px';
-select.style.cursor = 'pointer';
-select.style.marginBottom = '40px';
-
-// errorMessage
-errorMessage.style.color = 'red';
-errorMessage.style.fontWeight = 'bold';
-
-// loader
-loader.style.fontSize = '18px';
-loader.style.fontWeight = 'bold';
