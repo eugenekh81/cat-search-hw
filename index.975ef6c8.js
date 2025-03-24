@@ -649,7 +649,7 @@ function renderSelectOptions(data) {
             catInfo.classList.remove('hidden');
         }).catch((err)=>{
             loader.classList.add('hidden');
-            Notiflix.Notify.failure('Oops, something went wrong. Please try again later.');
+            (0, _notiflixNotifyAio.Notify).failure('Oops, something went wrong. Please try again later.');
         });
     });
 }
