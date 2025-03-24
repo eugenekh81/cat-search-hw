@@ -1,4 +1,6 @@
 'use strict';
+import SlimSelect from 'slim-select';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
 
 const select = document.querySelector('.breed-select');
@@ -12,7 +14,18 @@ fetchBreeds()
   })
   .then(data => {
     loader.classList.add('hidden');
+
     renderSelectOptions(data);
+
+    const select = new SlimSelect({
+      select: '#selectElement',
+      placeholder: 'Select breed...',
+      searchPlaceholder: 'Search breed...',
+      showSearch: true,
+      searchFocus: true,
+    });
+
+    select.setData(data);
   })
   .then(() => {
     select.classList.remove('hidden');
@@ -23,13 +36,13 @@ fetchBreeds()
   });
 
 function renderSelectOptions(data) {
-  const firstOption = document.createElement('option');
-  firstOption.value = '';
-  firstOption.textContent = 'Select breed...';
-  firstOption.disabled = true;
-  firstOption.selected = true;
+  // const firstOption = document.createElement('option');
+  // firstOption.value = '';
+  // firstOption.textContent = 'Select breed...';
+  // firstOption.disabled = true;
+  // firstOption.selected = true;
 
-  select.append(firstOption);
+  // select.append(firstOption);
 
   data.forEach(item => {
     const option = document.createElement('option');
@@ -53,8 +66,8 @@ function renderSelectOptions(data) {
         catInfo.classList.remove('hidden');
       })
       .catch(err => {
-        errorMessage.display = 'block';
-        errorMessage.textContent = err.message;
+        loader.classList.add('hidden');
+        Notiflix.Notify.failure('Oops, something went wrong. Please try again later.');
       });
   });
 }
