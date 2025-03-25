@@ -1,5 +1,7 @@
 'use strict';
 
+import SlimSelect from 'slim-select';
+import Notiflix from 'notiflix';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 
 const select = document.querySelector('.breed-select');
@@ -27,6 +29,8 @@ toggleVisibility(select, false);
 toggleVisibility(loader, true);
 
 const renderBreeds = ({ data }) => {
+  console.log(data, 'data');
+
   data.forEach(element => {
     const option = document.createElement('option');
     option.value = element.id;
@@ -46,31 +50,35 @@ select.addEventListener('change', e => {
 
   if (breedId) {
     toggleVisibility(loader, true);
-    toggleVisibility(catInfo, false);
-    toggleVisibility(errorMessage, false);
-
     catInfo.style.display = 'none';
 
     fetchCatByBreed(breedId)
       .then(data => {
         showCatInfo(data);
         toggleVisibility(loader, false);
-        toggleVisibility(catInfo, true);
-
         catInfo.style.display = 'block';
       })
       .catch(() => {
         toggleVisibility(loader, false);
-        toggleVisibility(errorMessage, true);
+
+        Notiflix.Notify.failure('Oops, something went wrong...', {
+          timeout: 1000,
+        });
 
         catInfo.style.display = 'none';
       });
   }
 });
 
-const showCatInfo = axiosResponse => {
-  console.log(axiosResponse);
+const selectNew = new SlimSelect({
+  select: '#selectElement',
+  placeholder: 'Select breed...',
+  searchPlaceholder: 'Search breed...',
+  showSearch: true,
+  searchFocus: true,
+});
 
+const showCatInfo = axiosResponse => {
   const { data } = axiosResponse;
   const cat = data[0];
   const breed = cat.breeds[0];
