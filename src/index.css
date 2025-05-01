@@ -1,0 +1,92 @@
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+.loader {
+  height: 35px;
+  width: 300px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.error {
+  color: red;
+  display: none;
+  height: 35px;
+  width: 300px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.breed-select {
+  height: 35px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px #eaccc8;
+  padding: 0 5px 0 5px;
+  margin: 20px auto 20px auto;
+  display: none;
+}
+
+.cat-info {
+  overflow: hidden;
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 30px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px #eaccc8;
+  display: none;
+}
+
+.catBreedImg--wrapper {
+  overflow: hidden;
+  height: 300px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catBreedImg--wrapper .catBreedImg {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.catBreedInfo--wrapper {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.catBreedInfo__headline {
+  max-width: 500px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.catBreedInfo__description {
+  max-width: 500px;
+  font-weight: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.origin {
+  width: fit-content;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px #eaccc8;
+  margin-top: 10px;
+  padding: 5px 15px;
+}
